@@ -2,7 +2,7 @@
 
 namespace SensioLabs\Behat\PageObjectExtension\PageObject\Factory;
 
-use ProxyManager\Factory\AbstractLazyFactory;
+use ProxyManager\Factory\AbstractBaseFactory;
 use ProxyManager\Proxy\LazyLoadingInterface;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Element;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Factory;
@@ -18,15 +18,15 @@ class LazyFactory implements Factory
     private $decoratedFactory;
 
     /**
-     * @var AbstractLazyFactory
+     * @var AbstractBaseFactory
      */
     private $proxyFactory;
 
     /**
      * @param Factory             $decoratedFactory
-     * @param AbstractLazyFactory $proxyFactory
+     * @param AbstractBaseFactory $proxyFactory
      */
-    public function __construct(Factory $decoratedFactory, AbstractLazyFactory $proxyFactory)
+    public function __construct(Factory $decoratedFactory, AbstractBaseFactory $proxyFactory)
     {
         $this->decoratedFactory = $decoratedFactory;
         $this->proxyFactory = $proxyFactory;
